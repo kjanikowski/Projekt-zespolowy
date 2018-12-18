@@ -1,5 +1,6 @@
-Michał Krause - poprawiona, działająca wersja kolokwium 1 z JavaEE.
+Mainpage + Informacje o zawodnikach projektu zespołowego.
 
-Aplikacja ma możliwość dodawania ankiet, wyświetlania ich i usuwania, wraz z poprawną obsługą dat.
+TODO - 18.12
 
-url:  http://localhost:8080/fishshop/survey
+- Sklejenie
+
