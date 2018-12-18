@@ -33,7 +33,7 @@ public class Mainpage extends HttpServlet{
 				"<th>Podstrony</th>" +
 				"</tr>" +
 				"<tr>" +
-				"<td><br><a href=\"URL\">Artykuły</a></td><td></td>" + // tu wstawić url artykułów
+				"<td><br><a href=\"URL\">http://localhost:8080/esportsready/news\</a></td><td></td>" + // tu wstawić url artykułów
 				"</tr>" +
 				"<tr>" +
 				"<td><br><a href=\"http://localhost:8080/esportsready/zawodnicy\">O Zawodnikach</a></td><td></td>" + 
