@@ -33,7 +33,7 @@ public class Mainpage extends HttpServlet{
 				"<th>Podstrony</th>" +
 				"</tr>" +
 				"<tr>" +
-				"<td><br><a href=\"URL\">http://localhost:8080/esportsready/news\</a></td><td></td>" + // tu wstawić url artykułów
+				"<td><br><a href=\"http://localhost:8080/esportsready/news\"> Newsy </a></td><td></td>" +
 				"</tr>" +
 				"<tr>" +
 				"<td><br><a href=\"http://localhost:8080/esportsready/zawodnicy\">O Zawodnikach</a></td><td></td>" + 
@@ -43,6 +43,9 @@ public class Mainpage extends HttpServlet{
 				"</tr>" +
 				"<tr>" +
 				"<td><br><a href=\"URL\">Strefa amatorska</a></td><td></td>" + // tu wstawić url strefy amatorskiej
+				"</tr>" +
+				"<tr>" +
+				"<td><br><a href=\"http://localhost:8080/esportsready/rankingftp\"> Ranking F2P </a></td><td></td>" +
 				"</tr>" +
 				"</table>" +		
 				"</td><td>" + //ponizej tabela srodkowa - newsy
