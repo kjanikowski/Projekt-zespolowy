@@ -1,6 +1,7 @@
 Mainpage + Informacje o zawodnikach projektu zespołowego.
 
-TODO - 18.12
+Todo Michał:
 
-- Sklejenie
+- Ranking F2P
+- CSS
 
