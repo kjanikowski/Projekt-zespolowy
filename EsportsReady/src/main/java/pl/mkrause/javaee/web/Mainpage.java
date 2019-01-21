@@ -4,25 +4,32 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+
 
 
 
 @WebServlet("/mainpage")
 public class Mainpage extends HttpServlet{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
 		
 		response.setContentType("text/html; charset=utf-8");
-		HttpSession session = request.getSession();
+		//HttpSession session = request.getSession();
 		
 		
 		PrintWriter printer = response.getWriter();
 		
+		String login = null,rola= null;
 		
 		
 		printer.println("<!DOCTYPE html><html lang=\"pl-PL\"><head><meta charset=\"UTF-8\"></head><body><h1><center>Esports Ready</center></h2>" +
@@ -33,7 +40,7 @@ public class Mainpage extends HttpServlet{
 				"<th>Podstrony</th>" +
 				"</tr>" +
 				"<tr>" +
-				"<td><br><a href=\"http://localhost:8080/esportsready/news\"> Newsy </a></td><td></td>" +
+				"<td><br><a href=\"http://localhost:8080/esportsready/news\">Artyku�y</a></td><td></td>" + // tu wstawić url artykułów
 				"</tr>" +
 				"<tr>" +
 				"<td><br><a href=\"http://localhost:8080/esportsready/zawodnicy\">O Zawodnikach</a></td><td></td>" + 
@@ -45,7 +52,31 @@ public class Mainpage extends HttpServlet{
 				"<td><br><a href=\"URL\">Strefa amatorska</a></td><td></td>" + // tu wstawić url strefy amatorskiej
 				"</tr>" +
 				"<tr>" +
-				"<td><br><a href=\"http://localhost:8080/esportsready/rankingftp\"> Ranking F2P </a></td><td></td>" +
+				"<td><br> Zalogowano: ");
+		
+
+				Cookie[] cookies = request.getCookies();
+
+				if(cookies != null){
+				for(Cookie cookie : cookies){
+					if(cookie.getName().equals("login")) {
+						login = cookie.getValue();
+					}
+					if(cookie.getName().equals("rola")) {
+						rola = cookie.getValue();
+					}
+				}
+				}
+				
+					
+		
+		
+				printer.println( login + rola + 
+				"<tr>" +
+				"<td><br><a href=\"/esportsready/login\">Zaloguj sie</a></td><td></td>" + // tu wstawić url strefy amatorskiej
+				"</tr>" +
+				"<tr>" +
+				"<td><br><a href=\"/esportsready/add\">Zarejestruj sie</a></td><td></td>" + // tu wstawić url strefy amatorskiej
 				"</tr>" +
 				"</table>" +		
 				"</td><td>" + //ponizej tabela srodkowa - newsy
@@ -81,5 +112,6 @@ public class Mainpage extends HttpServlet{
 	
 	
 //	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		
-}
+				
+	}
+
