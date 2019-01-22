@@ -25,7 +25,7 @@ public class AddTournament extends HttpServlet{
 	
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-		
+
 		out.println("<html><body><h2>Dodaj turniej</h2>" +
 				"<form action=\"addtournament\" method=\"post\">" +
 				"Gra: <input type='text' name='game' /> <br />" +

@@ -46,7 +46,9 @@ public class Zawodnicy_Overwatch extends HttpServlet{
 				"<img src=\"https://i.imgur.com/FDE7c3J.png\" alt=\"GhettoBorder\" align=\"right\"></td></tr>" + //wyjątkowo ghetto zrobiony border, ale działa.
 				"</table>" +
 				"</td></tr>" +
-				"</table>" +
+				"</table>" + "<br> <form action=\"/esportsready/mainpage\">\r\n" + 
+				"    <input type=\"submit\" value=\"Strona glowna\" />\r\n" + 
+				"</form>"+
  				"</body>" + 
 				"</html>");
 		printer.close();

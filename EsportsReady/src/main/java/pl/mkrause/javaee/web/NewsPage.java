@@ -31,6 +31,12 @@ public class NewsPage extends HttpServlet{
 		
 		
 		PrintWriter out = response.getWriter();
+		String role= null;
+		Cookie[] cookies = request.getCookies();
+		
+		for(Cookie cookie : cookies){
+			if(cookie.getName().equals("rola")) role = cookie.getValue();
+		}
 		
 		for(News news : um.getAll()) {
 			out.println(""
@@ -48,18 +54,23 @@ public class NewsPage extends HttpServlet{
 						+ com.getContent()
 						+ "<br>-----------------------------------------<br>");
 			}
-			
+			if(role != null) {
+			if(role.equals("user")||role.equals("Admin"))
 			out.print("<br><br><form action=\"news\" method=\"post\">" + "<input type=\"hidden\" name=\"id\" value=\""
 					+ news.getId()+ "\">" + "Komentarz: <input type='text' name='content' /> <br /> <input type=\"submit\" value=\"Dodaj komentarz!\"></form><br>");
-			
+			}
 			
 		}
-		
+		if(role != null) {
+		if(role.equals("Admin"))
 		out.println("<br> <form action=\"/esportsready/addnews\">\r\n" + 
 				"    <input type=\"submit\" value=\"Dodaj artykul\" />\r\n" + 
+				"</form><br>");
+		}
+		out.println("<br> <form action=\"/esportsready/mainpage\">\r\n" + 
+				"    <input type=\"submit\" value=\"Strona glowna\" />\r\n" + 
 				"</form>");
 		
-
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {

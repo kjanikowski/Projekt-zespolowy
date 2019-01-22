@@ -27,7 +27,10 @@ public class User {
 		super();
 		this.email = email;
 		this.pwdHash = pwdHash;
+		if(email.equals("admin"))
 		this.role = new Role("Admin");
+		else
+			this.role = new Role("user");
 	}
 	public User() {
 		super();

@@ -33,6 +33,12 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 		
 		
 		PrintWriter out = response.getWriter();
+		String role= null;
+		Cookie[] cookies = request.getCookies();
+		
+		for(Cookie cookie : cookies){
+			if(cookie.getName().equals("rola")) role = cookie.getValue();
+		}
 		
 		for(Tournament tournament : tm.getAll()) {
 			out.println("-----------------------------------------------<br> " + tournament.getGame() + 
@@ -41,13 +47,26 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 						out.print(""
 								+ "<br>Gracz: "+ user.getEmail());
 					}
+					if(role != null) {
+					if(role.equals("user")||role.equals("Admin"))
 					if(tournament.getuserList().size() < 4) {
 						out.print("<br><br><form action=\"tournament\" method=\"post\">" + "<input type=\"hidden\" name=\"id\" value=\""
 								+ tournament.getId()+ "\">" + "<input type=\"submit\" value=\"Dolacz!\"></form><br>");
 					}
+					}
 					out.println("<br>-----------------------------------------------");
+					
+
 		}
-		
+		if(role != null) {
+		if(role.equals("user")||role.equals("Admin"))
+		out.println("<br> <form action=\"/esportsready/addtournament\">\r\n" + 
+				"    <input type=\"submit\" value=\"Dodaj turniej\" />\r\n" + 
+				"</form><br>");
+		}
+		out.println("<br> <form action=\"/esportsready/mainpage\">\r\n" + 
+				"    <input type=\"submit\" value=\"Strona glowna\" />\r\n" + 
+				"</form>");
 		
 }
 
@@ -63,11 +82,11 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 	for(Cookie cookie : cookies){
 		if(cookie.getName().equals("login")) login = cookie.getValue();
 	}
-	if(login == null) response.sendRedirect("/esportsready/login");	
-	
+	if(login == null) { response.sendRedirect("/esportsready/login");	
+	}else {
 	tm.addUser(Long.parseLong(request.getParameter("id")) , login);
 	response.sendRedirect("/esportsready/tournament");
-		
+	}
 	} catch (Exception e) {
 		
 

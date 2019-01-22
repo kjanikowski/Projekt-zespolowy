@@ -30,13 +30,13 @@ public class Zawodnicy_League extends HttpServlet{
 				"<tr><td>" +
 				"<table align=\"center\" border=0>" +
 				"<tr>" +
-				"<td> <img src=\"https://liquipedia.net/leagueoflegends/File:SKT_Faker_2018LCK.jpg\" alt=\"faker\" width=\"600\" height=\"400\"></td>" + //faker
+				"<td> <img src=\"https://static.invenglobal.com/upload/image/2018/03/18/i1521372528421766.jpeg\" alt=\"faker\" width=\"600\" height=\"400\"></td>" + //faker
 				"<td> Lee \"Faker\" Sang-hyeok (born May 7, 1996) is a Korean player who currently plays as a Mid laner for SK Telecom T1. He is known for playing all his matches without using any skins and is considered the best midlaner to ever play the game.</td> " +
 				"</tr><tr>" +
-				"<td> <img src=\"https://liquipedia.net/commons/images/thumb/6/6d/JankosLEC.png/294px-JankosLEC.png\" alt=\"Jankos\" width=\"600\" height=\"400\"> </td>" + //jankos
+				"<td> <img src=\"https://eu.lolesports.com/darkroom/1265/a448df6a72a3604771f745fec967e24b:6ed19f0ae672534f1d29247c8e9dcbb0\" alt=\"Jankos\" width=\"600\" height=\"400\"> </td>" + //jankos
 				"<td> Marcin \"Jankos\" Jankowski (born July 23, 1995) is a Polish player who is playing for G2 Esports as the Jungler. At the start of the 2016 season, Jankos joined H2k-Gaming after the team were voted to play at IEM Season X - Cologne.  </td> " +
 				"</tr><tr>" +
-				"<td> <img src=\"https://liquipedia.net/leagueoflegends/File:TSM_Bjergsen_2018NALCS.jpg\" alt=\"Bjergsen\" width=\"600\" height=\"400\"> </td>" + //bjergsen
+				"<td> <img src=\"https://image.redbull.com/rbcom/010/2016-01-19/1331771906933_2/0100/0/1/s%C3%B8ren-bjergsen-bjerg.jpg\" alt=\"Bjergsen\" width=\"600\" height=\"400\"> </td>" + //bjergsen
 				"<td> Soren \"Bjergsen\" Bjerg is a Danish player who currently plays as a Mid laner for Team SoloMid.  Having to play a tiebreaker against Misfits Gaming, TSM lost and were eliminated from Worlds in the group stage yet again in a fashion similar to last years'.  </td>" +
 				"</tr><tr>" +
 				"</table>" +
@@ -46,7 +46,9 @@ public class Zawodnicy_League extends HttpServlet{
 				"<img src=\"https://i.imgur.com/FDE7c3J.png\" alt=\"GhettoBorder\" align=\"right\"></td></tr>" + //wyjątkowo ghetto zrobiony border, ale działa.
 				"</table>" +
 				"</td></tr>" +
-				"</table>" +
+				"</table>" +"<br> <form action=\"/esportsready/mainpage\">\r\n" + 
+				"    <input type=\"submit\" value=\"Strona glowna\" />\r\n" + 
+				"</form>"+
  				"</body>" + 
 				"</html>");
 		printer.close();

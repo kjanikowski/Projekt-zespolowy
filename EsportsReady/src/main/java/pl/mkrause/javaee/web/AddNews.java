@@ -52,6 +52,7 @@ public class AddNews extends HttpServlet{
 			if(cookie.getName().equals("login")) login = cookie.getValue();
 		}
 		if(login == null) response.sendRedirect("/esportsready/login");	
+		else
 		um.addNews(new News(request.getParameter("title"), request.getParameter("content"), login));
 		
 		
