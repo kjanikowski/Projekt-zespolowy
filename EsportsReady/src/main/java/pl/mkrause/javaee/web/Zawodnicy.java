@@ -31,7 +31,6 @@ public class Zawodnicy extends HttpServlet{
 				"<td> <a href=\"http://localhost:8080/esportsready/zawodnicyoverwatch\"> <img src=\"https://i.imgur.com/GjzBs0z.jpg\" alt=\"Overwatch\" </a>" +
 				"<td> <a href=\"http://localhost:8080/esportsready/zawodnicycsgo\"> <img src=\"https://i.imgur.com/p5JQpMu.png\" alt=\"CSGO\" </a>" +
 				"<td> <a href=\"http://localhost:8080/esportsready/zawodnicyleague\"> <img src=\"https://i.imgur.com/4eS7s23.png\" alt=\"Lol\" </a>" +
-				"<td> <a href=\"http://localhost:8080/esportsready/zawodnicydota\"> <img src=\"https://i.imgur.com/2NMRGXX.png\" alt=\"DotA\" </a>" +
 				"</table>" +
  				"</body>" + 
 				"</html>");
